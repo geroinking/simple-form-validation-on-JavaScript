@@ -31,7 +31,7 @@ const validated = (element, text) => {
 function checkEmail() {
     if (email.value.length <= 4) {
         errorColor(email, emailSmall);
-        emailSmall.textContent = 'ВВЕДИ МЫЛО, ТУТ ЖЕ БЛЯТЬ НАПИСАНО!';
+        emailSmall.textContent = 'ВВЕДИ МЫЛО!';
     } else if (!email.value.includes('@')) {
         errorColor(email, emailSmall);
     } else {
@@ -42,7 +42,7 @@ function checkEmail() {
 function checkUsername() {
     if (username.value.length < 6) {
         errorColor(username, userSmall);
-        userSmall.textContent = 'ТЫ ДАЛБАЕБ, ВВЕДИ КАК МИНИМУМ 6 БУКАВ';
+        userSmall.textContent = 'ВВЕДИ КАК МИНИМУМ 6 СИМВОЛОВ';
     } else {
         validated(username, userSmall);
     }
@@ -51,11 +51,11 @@ function checkUsername() {
 function checkPassword() {
     if (password.value !== password2.value) {
         errorColor(password, passSmall);
-        passSmall.textContent = 'ПИШИ ОДИНАКОВЫЙ ПАРОЛЬ, ПИДРИЛА!';
+        passSmall.textContent = 'ПАРОЛИ НЕ СОВПАДАЮТ!';
         password2.style.borderColor = 'red';
     } else if (password.value <= 0) {
         errorColor(password, passSmall1);
-        passSmall1.textContent = 'ДАУН, ВВЕДИ ХОТЬ ЧТО-ТО!';
+        passSmall1.textContent = 'ВВЕДИ ПАРОЛЬ!';
         password2.style.borderColor = 'red';
     } else {
         hideElem(passSmall1, passSmall);
